@@ -27,17 +27,17 @@ class ThreeDPlane {
 
         var cubeGeom = new THREE.BoxGeometry(1.6, 1.6, 1.6);
         var cubeMat = new THREE.MeshLambertMaterial({ color: 0xe83610 });
-        cubeOb = new THREE.Mesh(cubeGeom, cubeMat);
+        this.cubeOb = new THREE.Mesh(cubeGeom, cubeMat);
 
-        cubeOb.position.set(0, 0, 0);
+        this.cubeOb.position.set(0, 0, 0);
         this.scene.add(cubeOb);
 
-        camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
-        camera.position.y = 16;
-        camera.position.z = 40;
-        camera.lookAt(new THREE.Vector3(0, 0, 0));
+        this.camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
+        this.camera.position.y = 16;
+        this.camera.position.z = 40;
+        this.camera.lookAt(new THREE.Vector3(0, 0, 0));
 
-        controls = new THREE.OrbitControls(camera, this.renderer.domElement);
+        this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
 
         var gridXZ = new THREE.GridHelper(100, 10);
         gridXZ.setColors(new THREE.Color(0xff0000), new THREE.Color(0xffffff));
@@ -61,11 +61,11 @@ class ThreeDPlane {
         //put here instead of init to have planeOb.matrix defined, after render
         var texcoord = new THREE.Vector2(0.8, 0.65);
         var newpos = texturePosToPlaneWorld(planeOb, texcoord);
-        cubeOb.position.copy(newpos);
+        this.cubeOb.position.copy(newpos);
 
-        controls.update();
+        this.controls.update();
         requestAnimationFrame(animate);
-        renderer.render(scene, camera);
+        this.renderer.render(this.scene, this.camera);
     }
 
     texturePosToPlaneWorld(planeOb, texcoord) {
