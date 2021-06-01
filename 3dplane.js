@@ -47,7 +47,7 @@ class ThreeDPlane {
         pointLight.position.set(0, 10, 50);
         this.scene.add(pointLight);
 
-        window.addEventListener('resize', onWindowResize, false);
+        window.addEventListener('resize', this.onWindowResize.bind(this), false);
         animate()
     }
 
