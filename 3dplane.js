@@ -13,7 +13,7 @@ class ThreeDPlane {
         var width = window.innerWidth;
         var height = window.innerHeight;
         this.renderer.setSize(width, height);
-        document.body.appendChild(renderer.domElement);
+        container.appendChild(this.renderer.domElement);
 
         this.scene = new THREE.Scene();
 
@@ -37,7 +37,7 @@ class ThreeDPlane {
         camera.position.z = 40;
         camera.lookAt(new THREE.Vector3(0, 0, 0));
 
-        controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls = new THREE.OrbitControls(camera, this.renderer.domElement);
 
         var gridXZ = new THREE.GridHelper(100, 10);
         gridXZ.setColors(new THREE.Color(0xff0000), new THREE.Color(0xffffff));
@@ -48,7 +48,7 @@ class ThreeDPlane {
         this.scene.add(pointLight);
 
         window.addEventListener('resize', onWindowResize, false);
-        this.animate()
+        animate()
     }
 
     onWindowResize() {
