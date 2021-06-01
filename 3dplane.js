@@ -23,14 +23,14 @@ class ThreeDPlane {
 
         this.planeOb.position.set(0, 0, 0);
         this.planeOb.rotation.set(0, 0.6, 0);
-        this.scene.add(planeOb);
+        this.scene.add(this.planeOb);
 
         var cubeGeom = new THREE.BoxGeometry(1.6, 1.6, 1.6);
         var cubeMat = new THREE.MeshLambertMaterial({ color: 0xe83610 });
         this.cubeOb = new THREE.Mesh(cubeGeom, cubeMat);
 
         this.cubeOb.position.set(0, 0, 0);
-        this.scene.add(cubeOb);
+        this.scene.add(this.cubeOb);
 
         this.camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
         this.camera.position.y = 16;
