@@ -39,8 +39,8 @@ class ThreeDPlane {
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
 
 
-        var gridXZ = new THREE.GridHelper(100, 10);
-        gridXZ.setColors(new THREE.Color(0xff0000), new THREE.Color(0xffffff));
+        var gridXZ = new THREE.GridHelper(100, 10, new THREE.Color(0xff0000), new THREE.Color(0xffffff));
+
         this.scene.add(gridXZ);
 
         var pointLight = new THREE.PointLight(0xffffff);
