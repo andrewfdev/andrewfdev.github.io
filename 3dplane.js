@@ -19,10 +19,10 @@ class ThreeDPlane {
 
         var planeGeom = new THREE.PlaneGeometry(PLANESIZE, PLANESIZE);
         var planeMat = new THREE.MeshLambertMaterial({ color: 0x1ec876 });
-        planeOb = new THREE.Mesh(planeGeom, planeMat);
+        this.planeOb = new THREE.Mesh(planeGeom, planeMat);
 
-        planeOb.position.set(0, 0, 0);
-        planeOb.rotation.set(0, 0.6, 0);
+        this.planeOb.position.set(0, 0, 0);
+        this.planeOb.rotation.set(0, 0.6, 0);
         this.scene.add(planeOb);
 
         var cubeGeom = new THREE.BoxGeometry(1.6, 1.6, 1.6);
@@ -73,7 +73,7 @@ class ThreeDPlane {
         pos.x = (texcoord.x - 0.5) * PLANESIZE;
         pos.y = (texcoord.y - 0.5) * PLANESIZE;
 
-        pos.applyMatrix4(planeOb.matrix);
+        pos.applyMatrix4(this.planeOb.matrix);
         return pos;
     }
 
