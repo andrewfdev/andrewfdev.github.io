@@ -36,8 +36,8 @@ class ThreeDPlane {
         this.camera.position.y = 16;
         this.camera.position.z = 40;
         this.camera.lookAt(new THREE.Vector3(0, 0, 0));
+        this.controls = new OrbitControls(this.camera, this.renderer.domElement);
 
-        this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
 
         var gridXZ = new THREE.GridHelper(100, 10);
         gridXZ.setColors(new THREE.Color(0xff0000), new THREE.Color(0xffffff));
