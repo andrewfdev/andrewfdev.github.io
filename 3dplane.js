@@ -60,7 +60,7 @@ class ThreeDPlane {
     animate() {
         //put here instead of init to have planeOb.matrix defined, after render
         var texcoord = new THREE.Vector2(0.8, 0.65);
-        var newpos = this.texturePosToPlaneWorld(planeOb, texcoord);
+        var newpos = this.texturePosToPlaneWorld(this.planeOb, texcoord);
         this.cubeOb.position.copy(newpos);
 
         this.controls.update();
