@@ -7,7 +7,7 @@ class ThreeDPlane {
         const container = document.createElement('div');
         document.body.appendChild(container);
 
-        var PLANESIZE = 20;
+        this.PLANESIZE = 20;
 
         this.renderer = new THREE.WebGLRenderer({ antialias: true });
         var width = window.innerWidth;
@@ -70,8 +70,8 @@ class ThreeDPlane {
 
     texturePosToPlaneWorld(planeOb, texcoord) {
         var pos = new THREE.Vector3();
-        pos.x = (texcoord.x - 0.5) * PLANESIZE;
-        pos.y = (texcoord.y - 0.5) * PLANESIZE;
+        pos.x = (texcoord.x - 0.5) * this.PLANESIZE;
+        pos.y = (texcoord.y - 0.5) * this.PLANESIZE;
 
         pos.applyMatrix4(this.planeOb.matrix);
         return pos;
