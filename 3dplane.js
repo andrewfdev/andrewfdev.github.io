@@ -64,7 +64,7 @@ class ThreeDPlane {
         this.cubeOb.position.copy(newpos);
 
         this.controls.update();
-        requestAnimationFrame(animate);
+        requestAnimationFrame(this.animate);
         this.renderer.render(this.scene, this.camera);
     }
 
