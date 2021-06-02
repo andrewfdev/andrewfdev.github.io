@@ -17,7 +17,7 @@ class ThreeDPlane {
 
         this.scene = new THREE.Scene();
 
-        var planeGeom = new THREE.PlaneGeometry(PLANESIZE, PLANESIZE);
+        var planeGeom = new THREE.PlaneGeometry(this.PLANESIZE, this.PLANESIZE);
         var planeMat = new THREE.MeshLambertMaterial({ color: 0x1ec876 });
         this.planeOb = new THREE.Mesh(planeGeom, planeMat);
 
