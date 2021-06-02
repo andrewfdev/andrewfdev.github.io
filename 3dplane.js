@@ -48,7 +48,7 @@ class ThreeDPlane {
         this.scene.add(pointLight);
 
         window.addEventListener('resize', this.onWindowResize.bind(this), false);
-        animate()
+        this.animate();
     }
 
     onWindowResize() {
@@ -60,7 +60,7 @@ class ThreeDPlane {
     animate() {
         //put here instead of init to have planeOb.matrix defined, after render
         var texcoord = new THREE.Vector2(0.8, 0.65);
-        var newpos = texturePosToPlaneWorld(planeOb, texcoord);
+        var newpos = this.texturePosToPlaneWorld(planeOb, texcoord);
         this.cubeOb.position.copy(newpos);
 
         this.controls.update();
